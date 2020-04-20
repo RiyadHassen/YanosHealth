@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/instructionRecycler">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.yanoshealth.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
+            app:destination="@id/nav_home_second" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_home_second"
+        android:name="com.example.yanoshealth.ui.home.HomeSecondFragment"
+        android:label="@string/home_second"
+        tools:layout="@layout/fragment_home_second">
+        <action
+            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
+            app:destination="@id/nav_home" />
+
+        <argument
+            android:name="myArg"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.yanoshealth.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.yanoshealth.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/instructionRecycler"
+        android:name="com.example.yanoshealth.ui.instructionlist.InstructionRecycler"
+        android:label="InstructionRecycler"
+        tools:layout="@layout/fragment_instruction_recycler"
+        >
+        <action
+            android:id="@+id/action_showDetailInstruction"
+            app:destination="@id/detailInstruction" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/detailInstruction"
+        android:name="com.example.yanoshealth.ui.detailinst.DetailInstruction"
+        android:label="DetailInstruction"
+        tools:layout="@layout/fragment_detail_instruction"/>
+</navigation>
