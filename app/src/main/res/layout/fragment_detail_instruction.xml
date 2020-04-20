@@ -76,7 +76,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
 
-                        android:text="@{viewmodel.selectedProperty.martialStatus}"
+                        android:text="@{viewmodel.selectedProperty.relativeAddress}"
                         tools:text="Hello"
                         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                         android:textColor="@color/design_default_color_primary" />
@@ -110,7 +110,7 @@
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="348dp"
-                    android:text="@{viewmodel.selectedProperty.instruction}"
+                    android:text="@{viewmodel.selectedProperty.hname}"
                     tools:text="Hello" />
             </LinearLayout>
         </ScrollView>

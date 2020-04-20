@@ -55,12 +55,7 @@ fun hother(textView: TextView,instruction:InstructionProperty){
         textView.text = it.phoneNumb
     }
 }
-@BindingAdapter("weekno")
-fun weekno(textView: TextView,instruction:InstructionProperty){
-    instruction.let {
-        textView.text = it.weekno
-    }
-}
+
 /**
  * Uses the Glide library to load an image by URL into an [ImageView]
  */

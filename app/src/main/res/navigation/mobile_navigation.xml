@@ -55,5 +55,11 @@
         android:id="@+id/detailInstruction"
         android:name="com.example.yanoshealth.ui.detailinst.DetailInstruction"
         android:label="DetailInstruction"
-        tools:layout="@layout/fragment_detail_instruction"/>
+        tools:layout="@layout/fragment_detail_instruction">
+        <argument
+            android:name="property"
+            app:argType="com.example.yanoshealth.network.InstructionProperty"
+            />
+    </fragment>
+
 </navigation>
