@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 
 import com.example.yanoshealth.adapter.InstructionAdapter
 import com.example.yanoshealth.databinding.FragmentInstructionRecyclerBinding
@@ -32,11 +33,11 @@ class InstructionRecycler : Fragment() {
         viewModel.navigateToSelectedProperty.observe(this, Observer {
             if (null != it) {
                 // Must find the NavController from the Fragment
-//                findNavController().navigate(
-//                    InstructionHelalthDirections.actionShowDetailInstruction(
-//                        it
-//                    )
-//                )
+               findNavController().navigate(
+                    InstructionRecyclerDirections.actionShowDetailInstruction(
+                        it
+                    )
+               )
                 // Tell the ViewModel we've made the navigate call to prevent multiple navigation
                 viewModel.displayPropertyDetailsComplete()
             }
