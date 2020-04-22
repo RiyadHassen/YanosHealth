@@ -11,10 +11,11 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 import com.example.yanoshealth.databinding.ListItemYanosInstrutionBinding
-import com.example.yanoshealth.network.InstructionProperty
+import com.example.yanoshealth.domain.Instruction
 
 
-class InstructionAdapter(val onClickListener: OnClickListener): ListAdapter<InstructionProperty, InstructionAdapter.ViewHolder>(InstructionDiffCallback()){
+
+class InstructionAdapter(val onClickListener: OnClickListener): ListAdapter<Instruction, InstructionAdapter.ViewHolder>(InstructionDiffCallback()){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         Log.i("Information provided","Adapter created")
@@ -30,9 +31,9 @@ class InstructionAdapter(val onClickListener: OnClickListener): ListAdapter<Inst
     }
     class ViewHolder(private  val binding: ListItemYanosInstrutionBinding):
             RecyclerView.ViewHolder(binding.root){
-        fun bind(instruction:InstructionProperty) {
-            binding.inst = instruction
-            Log.i("MESSAGE", instruction.toString())
+        fun bind(networkInstruction:Instruction) {
+            binding.inst = networkInstruction
+            Log.i("MESSAGE", networkInstruction.toString())
             // This is important, because it forces the data binding to execute immediately,
             // which allows the RecyclerView to make the correct view size measurements
             binding.executePendingBindings()
@@ -40,18 +41,18 @@ class InstructionAdapter(val onClickListener: OnClickListener): ListAdapter<Inst
 
 
     }
-    class OnClickListener(val clickListener: (instructionProperty:InstructionProperty) -> Unit) {
-        fun onClick(instructionProperty: InstructionProperty) = clickListener(instructionProperty)
+    class OnClickListener(val clickListener: (networkInstruction:Instruction) -> Unit) {
+        fun onClick(networkInstruction: Instruction) = clickListener(networkInstruction)
     }
 
 }
 
-private class InstructionDiffCallback: DiffUtil.ItemCallback<InstructionProperty>(){
-    override fun areItemsTheSame(oldItem: InstructionProperty, newItem: InstructionProperty): Boolean {
+private class InstructionDiffCallback: DiffUtil.ItemCallback<Instruction>(){
+    override fun areItemsTheSame(oldItem: Instruction, newItem: Instruction): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: InstructionProperty, newItem: InstructionProperty): Boolean {
+    override fun areContentsTheSame(oldItem: Instruction, newItem: Instruction): Boolean {
         return  oldItem == newItem
     }
 

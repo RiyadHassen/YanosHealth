@@ -46,9 +46,9 @@
         android:label="InstructionRecycler"
         tools:layout="@layout/fragment_instruction_recycler"
         >
-        <action
-            android:id="@+id/action_showDetailInstruction"
-            app:destination="@id/detailInstruction" />
+<!--        <action-->
+<!--            android:id="@+id/action_showDetailInstruction"-->
+<!--            app:destination="@id/detailInstruction" />-->
 
     </fragment>
     <fragment
@@ -56,10 +56,10 @@
         android:name="com.example.yanoshealth.ui.detailinst.DetailInstruction"
         android:label="DetailInstruction"
         tools:layout="@layout/fragment_detail_instruction">
-        <argument
-            android:name="property"
-            app:argType="com.example.yanoshealth.network.InstructionProperty"
-            />
+<!--        <argument-->
+<!--            android:name="property"-->
+<!--            app:argType="com.example.yanoshealth.network.InstructionProperty"-->
+<!--            />-->
     </fragment>
 
 </navigation>

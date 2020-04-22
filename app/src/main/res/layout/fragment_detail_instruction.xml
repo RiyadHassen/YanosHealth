@@ -48,7 +48,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@{viewmodel.selectedProperty.hname}"
+                        android:text="@{viewmodel.selectedNetwork.hname}"
                         tools:text="Hello"
                         android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
@@ -57,7 +57,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
 
-                        android:text="@{viewmodel.selectedProperty.relativeAddress}"
+                        android:text="@{viewmodel.selectedNetwork.relativeAddress}"
                         tools:text="Hello"
                         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                         android:textColor="@color/design_default_color_primary" />
@@ -67,7 +67,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
 
-                        android:text="@{viewmodel.selectedProperty.phoneNumb}"
+                        android:text="@{viewmodel.selectedNetwork.phoneNumb}"
                         tools:text="Hello"
                         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                         android:textColor="@color/design_default_color_primary" />
@@ -76,7 +76,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
 
-                        android:text="@{viewmodel.selectedProperty.relativeAddress}"
+                        android:text="@{viewmodel.selectedNetwork.relativeAddress}"
                         tools:text="Hello"
                         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                         android:textColor="@color/design_default_color_primary" />
@@ -110,7 +110,7 @@
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="348dp"
-                    android:text="@{viewmodel.selectedProperty.hname}"
+                    android:text="@{viewmodel.selectedNetwork.hname}"
                     tools:text="Hello" />
             </LinearLayout>
         </ScrollView>

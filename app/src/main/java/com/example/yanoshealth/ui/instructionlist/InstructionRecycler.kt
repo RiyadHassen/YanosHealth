@@ -17,30 +17,31 @@ import com.example.yanoshealth.databinding.FragmentInstructionRecyclerBinding
 class InstructionRecycler : Fragment() {
 
     private val viewModel:  InstructionViewModel by lazy {
-        ViewModelProviders.of(this).get(InstructionViewModel::class.java)
+        val activity = requireNotNull(this.activity)
+
+        ViewModelProviders.of(this,InstructionViewModel.Factory(activity.application)).get(InstructionViewModel::class.java)
     }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val binding = FragmentInstructionRecyclerBinding.inflate(inflater)
         binding.setLifecycleOwner(this)
-
         binding.viewModel = viewModel
         Log.i("STATUS", binding.toString())
-        binding.hopsitalList.adapter = InstructionAdapter(InstructionAdapter.OnClickListener {
-            viewModel.displayPropertyDetails(it)
-        })
-        viewModel.navigateToSelectedProperty.observe(this, Observer {
-            if (null != it) {
-                // Must find the NavController from the Fragment
-              findNavController().navigate(
-                    InstructionRecyclerDirections.actionShowDetailInstruction(
-                        it)
-               )
-                // Tell the ViewModel we've made the navigate call to prevent multiple navigation
-                viewModel.displayPropertyDetailsComplete()
-            }
-        })
+//        binding.hopsitalList.adapter = InstructionAdapter(InstructionAdapter.OnClickListener {
+//            viewModel.displayPropertyDetails(it)
+//        })
+//        viewModel.navigateToSelectedNetwork.observe(this, Observer {
+//            if (null != it) {
+//                // Must find the NavController from the Fragment
+//              findNavController().navigate(
+//                    InstructionRecyclerDirections.actionShowDetailInstruction(
+//                        it)
+//               )
+//                // Tell the ViewModel we've made the navigate call to prevent multiple navigation
+//                viewModel.displayPropertyDetailsComplete()
+//            }
+//        })
 
         return binding.root
     }

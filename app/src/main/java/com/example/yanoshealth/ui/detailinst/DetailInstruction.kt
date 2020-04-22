@@ -19,10 +19,10 @@ class DetailInstruction : Fragment() {
         val application = requireNotNull(activity).application
         val binding = FragmentDetailInstructionBinding.inflate(inflater)
         binding.setLifecycleOwner(this)
-        val instructionProperty = DetailInstructionArgs.fromBundle(arguments!!).property
-        val viewModelFactory = DetailInstViewModelFactory(instructionProperty,application)
-        binding.viewmodel = ViewModelProviders.of(
-            this, viewModelFactory).get(DetailInstViewModel::class.java)
+//        val instructionProperty = DetailInstructionArgs.fromBundle(arguments!!).property
+//        val viewModelFactory = DetailInstViewModelFactory(instructionProperty,application)
+//        binding.viewmodel = ViewModelProviders.of(
+//            this, viewModelFactory).get(DetailInstViewModel::class.java)
 
         return binding.root
     }

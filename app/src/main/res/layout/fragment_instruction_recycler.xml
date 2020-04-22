@@ -24,7 +24,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:listHospital="@{viewModel.property}"
+            app:listHospital="@{viewModel.properties}"
             tools:listitem="@layout/list_item_yanos_instrution" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

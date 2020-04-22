@@ -6,7 +6,7 @@
     <data>
         <variable
             name="inst"
-            type="com.example.yanoshealth.network.InstructionProperty" />
+            type="com.example.yanoshealth.domain.Instruction" />
 
 
     </data>

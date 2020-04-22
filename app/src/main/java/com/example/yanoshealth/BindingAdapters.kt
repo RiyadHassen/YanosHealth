@@ -17,11 +17,7 @@
 
 package com.example.yanoshealth
 
-import android.view.View
-import android.widget.AutoCompleteTextView
-import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 
@@ -29,29 +25,30 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 import com.example.yanoshealth.adapter.InstructionAdapter
-import com.example.yanoshealth.network.InstructionProperty
+import com.example.yanoshealth.domain.Instruction
+import com.example.yanoshealth.network.NetworkInstruction
 
 
 @BindingAdapter("listHospital")
-fun bindHRecyclerView(recyclerView: RecyclerView,data:List<InstructionProperty>?){
+fun bindHRecyclerView(recyclerView: RecyclerView,data:List<Instruction>?){
     val adapter = recyclerView.adapter as InstructionAdapter
     adapter.submitList(data)
 }
 @BindingAdapter("hname")
-fun hname(textView: TextView,instruction:InstructionProperty){
-       instruction.let {
+fun hname(textView: TextView, networkInstruction:Instruction){
+       networkInstruction.let {
            textView.text = it.hname
        }
 }
 @BindingAdapter("relative")
-fun hrelative(textView: TextView,instruction:InstructionProperty){
-    instruction.let {
+fun hrelative(textView: TextView, networkInstruction:Instruction){
+    networkInstruction.let {
         textView.text = it.relativeAddress
     }
 }
 @BindingAdapter("hpass")
-fun hother(textView: TextView,instruction:InstructionProperty){
-    instruction.let {
+fun hother(textView: TextView, networkInstruction:Instruction){
+    networkInstruction.let {
         textView.text = it.phoneNumb
     }
 }
