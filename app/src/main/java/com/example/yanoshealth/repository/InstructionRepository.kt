@@ -23,8 +23,10 @@ class InstructionRepository(private val instructionDatabase: InstructionDatabase
      */
     suspend fun updateDatabase(){
         withContext(Dispatchers.IO){
-            val networkdata = InstructionApi.RETROFIT_SERVICE.getProperties().await()
-            instructionDatabase.instructionDao.insertAll(*networkdata.asDatabaseModel())
+            val networkdata = InstructionApi.RETROFIT_SERVICE.getProperties().await().body()
+            if (networkdata != null) {
+                instructionDatabase.instructionDao.insertAll(*networkdata)
+            }
         }
     }
 }

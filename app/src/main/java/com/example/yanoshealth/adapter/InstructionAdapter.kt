@@ -41,7 +41,7 @@ class InstructionAdapter(val onClickListener: OnClickListener): ListAdapter<Inst
 
 
     }
-    class OnClickListener(val clickListener: (networkInstruction:Instruction) -> Unit) {
+    class OnClickListener(val clickListener: (instruction:Instruction) -> Unit) {
         fun onClick(networkInstruction: Instruction) = clickListener(networkInstruction)
     }
 

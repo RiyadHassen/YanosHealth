@@ -7,7 +7,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import kotlinx.android.parcel.Parcelize
 
-@JsonClass(generateAdapter = true)
+
 @Parcelize data class NetworkInstruction (
         val id :Int,
         val hname :String,
@@ -18,7 +18,7 @@ import kotlinx.android.parcel.Parcelize
 
 }
 
-@JsonClass(generateAdapter = true)
+
 data class NetworkInstructionContainer(val instructions:List<NetworkInstruction> )
 
 /**

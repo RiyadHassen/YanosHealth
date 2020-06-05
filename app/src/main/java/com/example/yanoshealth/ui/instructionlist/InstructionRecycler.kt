@@ -21,6 +21,9 @@ class InstructionRecycler : Fragment() {
 
         ViewModelProviders.of(this,InstructionViewModel.Factory(activity.application)).get(InstructionViewModel::class.java)
     }
+
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -28,9 +31,9 @@ class InstructionRecycler : Fragment() {
         binding.setLifecycleOwner(this)
         binding.viewModel = viewModel
         Log.i("STATUS", binding.toString())
-//        binding.hopsitalList.adapter = InstructionAdapter(InstructionAdapter.OnClickListener {
-//            viewModel.displayPropertyDetails(it)
-//        })
+        binding.hopsitalList.adapter = InstructionAdapter(InstructionAdapter.OnClickListener {
+
+        })
 //        viewModel.navigateToSelectedNetwork.observe(this, Observer {
 //            if (null != it) {
 //                // Must find the NavController from the Fragment

@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 import java.security.AccessControlContext
 
-
+@Dao
 interface InstructionDao{
     @Query("select * from databaseinstructions")
     fun getInstructions():LiveData<List<DatabaseInstructions>>
@@ -14,6 +14,7 @@ interface InstructionDao{
     fun insertAll(vararg instructions:DatabaseInstructions)
 }
 
+@Database(entities = [DatabaseInstructions::class],version = 1)
 abstract class InstructionDatabase:RoomDatabase(){
     abstract val instructionDao:InstructionDao
 }
