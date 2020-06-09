@@ -6,7 +6,7 @@ import com.squareup.moshi.Json
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize data class InstructionProperty (
-        val id :Int,
+        @Json(name = "id")val id :Int,
         @Json(name = "age_group_name")val hname :String,
         @Json(name = "education_name")val hpass:String,
         @Json(name = "language_name")val phoneNumb :String,
