@@ -11,10 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 import com.example.yanoshealth.databinding.ListItemYanosInstrutionBinding
-import com.example.yanoshealth.network.InstructionProperty
+import com.example.yanoshealth.firebase.Instruction
 
 
-class InstructionAdapter(val onClickListener: OnClickListener): ListAdapter<InstructionProperty, InstructionAdapter.ViewHolder>(InstructionDiffCallback()){
+class InstructionAdapter(val onClickListener: OnClickListener): ListAdapter<Instruction, InstructionAdapter.ViewHolder>(InstructionDiffCallback()){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         Log.i("Information provided","Adapter created")
@@ -30,7 +30,7 @@ class InstructionAdapter(val onClickListener: OnClickListener): ListAdapter<Inst
     }
     class ViewHolder(private  val binding: ListItemYanosInstrutionBinding):
             RecyclerView.ViewHolder(binding.root){
-        fun bind(instruction:InstructionProperty) {
+        fun bind(instruction: Instruction) {
             binding.inst = instruction
             Log.i("MESSAGE", instruction.toString())
             // This is important, because it forces the data binding to execute immediately,
@@ -40,18 +40,18 @@ class InstructionAdapter(val onClickListener: OnClickListener): ListAdapter<Inst
 
 
     }
-    class OnClickListener(val clickListener: (instructionProperty:InstructionProperty) -> Unit) {
-        fun onClick(instructionProperty: InstructionProperty) = clickListener(instructionProperty)
+    class OnClickListener(val clickListener: (instructionProperty: Instruction) -> Unit) {
+        fun onClick(instruction: Instruction) = clickListener(instruction)
     }
 
 }
 
-private class InstructionDiffCallback: DiffUtil.ItemCallback<InstructionProperty>(){
-    override fun areItemsTheSame(oldItem: InstructionProperty, newItem: InstructionProperty): Boolean {
-        return oldItem.id == newItem.id
+private class InstructionDiffCallback: DiffUtil.ItemCallback<Instruction>(){
+    override fun areItemsTheSame(oldItem: Instruction, newItem: Instruction): Boolean {
+        return oldItem.weekno == newItem.weekno
     }
 
-    override fun areContentsTheSame(oldItem: InstructionProperty, newItem: InstructionProperty): Boolean {
+    override fun areContentsTheSame(oldItem: Instruction, newItem: Instruction): Boolean {
         return  oldItem == newItem
     }
 

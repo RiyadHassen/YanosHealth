@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "128078052801",
+    "firebase_url": "https://yanos-health.firebaseio.com",
+    "project_id": "yanos-health",
+    "storage_bucket": "yanos-health.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128078052801:android:db44b24b0f90a609cc0340",
+        "android_client_info": {
+          "package_name": "com.example.yanoshealth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128078052801-vs3inhohgortsvt22jf1d3d3ntki2usq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.yanoshealth",
+            "certificate_hash": "04a15db7e61bf4bdea8c7f6649740a95634bb3ed"
+          }
+        },
+        {
+          "client_id": "128078052801-qr4ps746942173rp15mi8qm2i3prfjbi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTIfTRosUSsH70Yh59SuI3ydnzacBwudw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128078052801-qr4ps746942173rp15mi8qm2i3prfjbi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

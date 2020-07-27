@@ -17,50 +17,70 @@
 
 package com.example.yanoshealth
 
-import android.view.View
-import android.widget.AutoCompleteTextView
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-
-
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 
 
 import com.example.yanoshealth.adapter.InstructionAdapter
-import com.example.yanoshealth.network.InstructionProperty
+import com.example.yanoshealth.firebase.Instruction
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 
 
-@BindingAdapter("listHospital")
-fun bindHRecyclerView(recyclerView: RecyclerView,data:List<InstructionProperty>?){
-    val adapter = recyclerView.adapter as InstructionAdapter
-    adapter.submitList(data)
+@BindingAdapter("listInstruction")
+fun bindHRecyclerView(recyclerView: RecyclerView,data:List<Instruction>?){
+
+        val adapter = recyclerView.adapter as InstructionAdapter
+        adapter.submitList(data)
+
 }
-@BindingAdapter("hname")
-fun hname(textView: TextView,instruction:InstructionProperty){
+@BindingAdapter("imageUrl")
+fun bindingImage(imageView: ImageView, imageurl:String?){
+    val storageRef = Firebase.storage.reference
+    val pathReference = storageRef.child("images/$imageurl.jpg")
+    Log.d("Image",pathReference.toString())
+
+        var imageURL:String
+        pathReference.downloadUrl.addOnSuccessListener { Uri ->
+
+             imageURL= Uri.toString()
+            Glide.with(imageView.context)
+                .load(imageURL)
+                .apply(RequestOptions().placeholder(R.drawable.loading_animation)
+                    .error(R.drawable.ic_broken_image))
+                .into(imageView)
+
+        }
+
+
+}
+@BindingAdapter("language")
+fun hname(textView: TextView,instruction: Instruction){
        instruction.let {
-           textView.text = it.hname
+           textView.text = it.language
        }
 }
-@BindingAdapter("relative")
-fun hrelative(textView: TextView,instruction:InstructionProperty){
+@BindingAdapter("content")
+fun hrelative(textView: TextView,instruction: Instruction){
     instruction.let {
-        textView.text = it.relativeAddress
+        textView.text = it.content
     }
 }
-@BindingAdapter("hpass")
-fun hother(textView: TextView,instruction:InstructionProperty){
+@BindingAdapter("imageurl")
+fun hother(textView: TextView,instruction: Instruction){
     instruction.let {
-        textView.text = it.phoneNumb
+        textView.text = it.imageurl
     }
 }
 @BindingAdapter("weekno")
-fun weekno(textView: TextView,instruction:InstructionProperty){
+fun weekno(textView: TextView,instruction: Instruction){
     instruction.let {
-        textView.text = it.weekno
+        textView.text = it.weekno.toString()
     }
 }
-/**
- * Uses the Glide library to load an image by URL into an [ImageView]
- */

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="inst"
-            type="com.example.yanoshealth.network.InstructionProperty" />
+            type="com.example.yanoshealth.firebase.Instruction" />
 
 
     </data>
@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/ic_broken_image"
-
+            app:imageUrl="@{inst.imageurl}"
             tools:ignore="VectorDrawableCompat" />
 
         <TextView
@@ -37,7 +37,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:text="TextView"
-            app:hname="@{inst}"
+            app:content="@{inst}"
             app:layout_constraintBottom_toTopOf="@+id/instruction"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/inst_image"
@@ -51,7 +51,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:text="TextView"
-            app:hpass="@{inst}"
+            app:imageurl="@{inst}"
             app:layout_constraintBottom_toTopOf="@+id/textView3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/inst_image"
@@ -69,7 +69,7 @@
             app:layout_constraintStart_toEndOf="@+id/inst_image"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.796"
-            app:relative="@{inst}" />
+            app:language="@{inst}" />
 
         <TextView
             android:id="@+id/textView"

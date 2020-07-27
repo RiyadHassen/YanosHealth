@@ -5,29 +5,7 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@id/instructionRecycler">
 
-    <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.yanoshealth.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home">
 
-        <action
-            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
-            app:destination="@id/nav_home_second" />
-    </fragment>
-    <fragment
-        android:id="@+id/nav_home_second"
-        android:name="com.example.yanoshealth.ui.home.HomeSecondFragment"
-        android:label="@string/home_second"
-        tools:layout="@layout/fragment_home_second">
-        <action
-            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
-            app:destination="@id/nav_home" />
-
-        <argument
-            android:name="myArg"
-            app:argType="string" />
-    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -58,7 +36,25 @@
         tools:layout="@layout/fragment_detail_instruction">
         <argument
             android:name="property"
-            app:argType="com.example.yanoshealth.network.InstructionProperty"
+            app:argType="com.example.yanoshealth.firebase.Instruction"
             />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.yanoshealth.ui.user.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.yanoshealth.ui.user.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_instructionRecycler"
+            app:destination="@id/instructionRecycler" />
     </fragment>
 </navigation>

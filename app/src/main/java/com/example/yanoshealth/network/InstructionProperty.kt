@@ -12,8 +12,8 @@ import kotlinx.android.parcel.Parcelize
         @Json(name = "language_name")val phoneNumb :String,
         @Json(name ="location_name")val relativeAddress:String,
         @Json(name ="martial_status_name")val martialStatus:String,
-        @Json(name ="instruction")val instruction:String,
-        @Json(name ="week_number_name")val weekno:String
+        @Json(name ="paragraph")val instruction:String,
+        @Json(name ="week_number_name")val weekNumberName:String
 ): Parcelable {
 
 }
