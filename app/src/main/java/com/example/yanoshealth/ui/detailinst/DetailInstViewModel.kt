@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.yanoshealth.firebase.Instruction
 
-import com.example.yanoshealth.network.InstructionProperty
+
 
 
 class DetailInstViewModel(instruction: Instruction, app: Application):AndroidViewModel(app) {
