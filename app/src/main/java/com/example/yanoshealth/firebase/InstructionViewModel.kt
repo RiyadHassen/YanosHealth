@@ -5,15 +5,10 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.yanoshealth.network.InstructionApi
-import com.example.yanoshealth.network.InstructionProperty
-import com.example.yanoshealth.ui.instructionlist.YanosStatus
+
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
-import com.google.firebase.ktx.Firebase
+
 import kotlinx.coroutines.*
-import java.lang.Exception
 
 class InstructionViewModel: ViewModel() {
 

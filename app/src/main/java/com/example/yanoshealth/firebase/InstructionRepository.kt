@@ -14,11 +14,13 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Deferred
 
 class InstructionRepository {
-    private lateinit var database : DatabaseReference
+    private  val database : DatabaseReference by lazy{
+         Firebase.database.reference
+    }
     private var data:   MutableList<Instruction?> = ArrayList<Instruction?>()
 
     fun getDataSet():MutableList<Instruction?>{
-        database = Firebase.database.reference
+
         val myRef = database.child("instruction")
         val childEventListener = object : ChildEventListener {
             override fun onChildAdded(dataSnapshot: DataSnapshot, previousChildName: String?) {
