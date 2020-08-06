@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.yanoshealth.ui.detailinst.DetailInstViewModel" />
+            type="com.yanos.health.ui.detailinst.DetailInstViewModel" />
 
     </data>
 

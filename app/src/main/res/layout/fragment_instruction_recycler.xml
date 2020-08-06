@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.yanoshealth.firebase.InstructionViewModel" />
+            type="com.yanos.health.firebase.InstructionViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,8 +16,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/hopsital_list"
-            android:layout_width="409dp"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:paddingTop="16dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"

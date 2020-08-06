@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "128078052801",
-    "firebase_url": "https://yanos-health.firebaseio.com",
-    "project_id": "yanos-health",
-    "storage_bucket": "yanos-health.appspot.com"
+    "project_number": "713324291073",
+    "firebase_url": "https://yanos-health-7f6f6.firebaseio.com",
+    "project_id": "yanos-health-7f6f6",
+    "storage_bucket": "yanos-health-7f6f6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:128078052801:android:db44b24b0f90a609cc0340",
+        "mobilesdk_app_id": "1:713324291073:android:66ae7a9e820ab311a40c00",
         "android_client_info": {
-          "package_name": "com.example.yanoshealth"
+          "package_name": "com.yanos.health"
         }
       },
       "oauth_client": [
         {
-          "client_id": "128078052801-vs3inhohgortsvt22jf1d3d3ntki2usq.apps.googleusercontent.com",
+          "client_id": "713324291073-6qtr6n865c22kfr53jm6v63c9oq6hcau.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.yanoshealth",
+            "package_name": "com.yanos.health",
             "certificate_hash": "04a15db7e61bf4bdea8c7f6649740a95634bb3ed"
           }
         },
         {
-          "client_id": "128078052801-qr4ps746942173rp15mi8qm2i3prfjbi.apps.googleusercontent.com",
+          "client_id": "713324291073-ra968oavi7tc4ebs7o0gvf07eu2mvo35.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBTIfTRosUSsH70Yh59SuI3ydnzacBwudw"
+          "current_key": "AIzaSyChQzDdp0Qfe2StegHKZZ-ykJdmSka7x7E"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "128078052801-qr4ps746942173rp15mi8qm2i3prfjbi.apps.googleusercontent.com",
+              "client_id": "713324291073-ra968oavi7tc4ebs7o0gvf07eu2mvo35.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

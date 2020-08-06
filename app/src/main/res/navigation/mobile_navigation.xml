@@ -9,18 +9,18 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.yanoshealth.ui.gallery.GalleryFragment"
+        android:name="com.yanos.health.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.yanoshealth.ui.slideshow.SlideshowFragment"
+        android:name="com.yanos.health.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/instructionRecycler"
-        android:name="com.example.yanoshealth.ui.instructionlist.InstructionRecycler"
+        android:name="com.yanos.health.ui.instructionlist.InstructionRecycler"
         android:label="InstructionRecycler"
         tools:layout="@layout/fragment_instruction_recycler"
         >
@@ -31,30 +31,21 @@
     </fragment>
     <fragment
         android:id="@+id/detailInstruction"
-        android:name="com.example.yanoshealth.ui.detailinst.DetailInstruction"
+        android:name="com.yanos.health.ui.detailinst.DetailInstruction"
         android:label="DetailInstruction"
         tools:layout="@layout/fragment_detail_instruction">
         <argument
             android:name="property"
-            app:argType="com.example.yanoshealth.firebase.Instruction"
+            app:argType="com.yanos.health.firebase.Instruction"
             />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.yanoshealth.ui.user.RegisterFragment"
+        android:name="com.yanos.health.ui.user.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register">
         <action
-            android:id="@+id/action_registerFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.yanoshealth.ui.user.LoginFragment"
-        android:label="LoginFragment"
-        tools:layout="@layout/fragment_login">
-        <action
-            android:id="@+id/action_loginFragment_to_instructionRecycler"
+            android:id="@+id/action_registerFragment_to_instructionRecycler"
             app:destination="@id/instructionRecycler" />
     </fragment>
 </navigation>
