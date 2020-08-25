@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/instructionRecycler">
+    app:startDestination="@id/registerFragment">
 
 
 
@@ -11,7 +11,11 @@
         android:id="@+id/nav_gallery"
         android:name="com.yanos.health.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_nav_gallery_to_instructionRecycler"
+            app:destination="@id/instructionRecycler" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"
@@ -27,6 +31,9 @@
         <action
             android:id="@+id/action_showDetailInstruction"
             app:destination="@id/detailInstruction" />
+        <argument
+            android:name="week_language"
+            app:argType="string" />
 
     </fragment>
     <fragment
@@ -45,7 +52,7 @@
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register">
         <action
-            android:id="@+id/action_registerFragment_to_instructionRecycler"
-            app:destination="@id/instructionRecycler" />
+            android:id="@+id/action_registerFragment_to_nav_gallery"
+            app:destination="@id/nav_gallery" />
     </fragment>
 </navigation>

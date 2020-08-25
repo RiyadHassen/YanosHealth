@@ -1,9 +1,18 @@
 package com.yanos.health.firebase
 
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.yanos.android.firebaseui_login_sample.FirebaseUserLiveData
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class LoginViewModel : ViewModel() {
@@ -15,18 +24,29 @@ class LoginViewModel : ViewModel() {
     }
 
     val firebaseLiveData = FirebaseUserLiveData()
-        val authenticationState= Transformations.map(firebaseLiveData) { user ->
+    val authenticationState= Transformations.map(firebaseLiveData) { user ->
         if (user != null) {
             AuthenticationState.AUTHENTICATED
         } else {
             AuthenticationState.UNAUTHENTICATED
         }
     }
+    private var _instruction = MutableLiveData<String>()
 
-    /**
-     * Gets a fact to display based on the user's set preference of which type of fact they want
-     * to see (Android fact or California fact). If there is no logged in user or if the user has
-     * not set a preference, defaults to showing Android facts.
-     */
+    val instruction: LiveData<String>
+        get() = _instruction
 
+
+    private var viewModelJob = Job()
+    //to update the view immediately
+
+    private val courutineScope = CoroutineScope(viewModelJob+ Dispatchers.Main)
+    private fun getConfigs(){
+          courutineScope.launch {
+              //  firebaseLiveData.getConfig(instruction.value->Unit)
+            }
+    }
+    init {
+        getConfigs()
+    }
 }

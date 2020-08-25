@@ -95,7 +95,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.
             app:errorEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/weekNo_edit_text"
+                android:id="@+id/weekNoEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_baseline_calendar_today_24"
@@ -124,7 +124,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/register_button"
+            android:id="@+id/registerButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"

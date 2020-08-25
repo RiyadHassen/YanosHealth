@@ -11,26 +11,26 @@ import kotlinx.coroutines.*
 
 class InstructionViewModel: ViewModel() {
 
-    private var _instruction = MutableLiveData<List<Instruction?>>()
-    private lateinit var database : DatabaseReference
-    private  var repository: InstructionRepository = InstructionRepository()
-    val instruction:LiveData<List<Instruction?>>
+    private var _instruction = MutableLiveData<MutableList<Instruction?>>()
+//    private  var repository: InstructionRepository = InstructionRepository()
+    val instruction:LiveData<MutableList<Instruction?>>
         get() = _instruction
 
 
     private var viewModelJob = Job()
     //to update the view immediately
 
-    private val courutineScope = CoroutineScope(viewModelJob+ Dispatchers.Main)
+//    private val courutineScope = CoroutineScope(viewModelJob+ Dispatchers.Main)
     private fun getInstructions(){
-            courutineScope.launch {
-                _instruction.value = repository.getDataSet()
-                Log.d("==============status1==", _instruction.value.toString())
-            }
+//            courutineScope.launch {
+//                _instruction.value = repository.data
+
+
+
+//            }
     }
     init {
-        getInstructions()
-        Log.d("==============status2==", _instruction.value.toString())
+//        getInstructions()
 
     }
     override fun onCleared() {

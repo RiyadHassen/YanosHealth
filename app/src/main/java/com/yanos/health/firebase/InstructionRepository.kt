@@ -13,9 +13,12 @@ class InstructionRepository {
     private  val database : DatabaseReference by lazy{
          Firebase.database.reference
     }
-    private var data:   MutableList<Instruction?> = ArrayList<Instruction?>()
+    init {
+        getDataSet()
+    }
+    var data:   MutableList<Instruction?> = ArrayList<Instruction?>()
 
-    fun getDataSet():MutableList<Instruction?>{
+    fun getDataSet(){
 
         val myRef = database.child("instruction")
         val childEventListener = object : ChildEventListener {
@@ -37,7 +40,7 @@ class InstructionRepository {
             override fun onChildRemoved(dataSnapshot: DataSnapshot) {
                 Log.d(ContentValues.TAG, "onChildRemoved:" + dataSnapshot.key!!)
                 val newInstruction = dataSnapshot.getValue(Instruction::class.java)
-                data.add(newInstruction)
+                data.remove(newInstruction)
             }
 
             override fun onChildMoved(dataSnapshot: DataSnapshot, previousChildName: String?) {
@@ -50,7 +53,6 @@ class InstructionRepository {
             }
         }
         myRef.addChildEventListener(childEventListener)
-        return data
     }
 
 

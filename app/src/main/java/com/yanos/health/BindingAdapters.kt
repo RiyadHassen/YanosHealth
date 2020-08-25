@@ -31,12 +31,11 @@ import com.yanos.health.firebase.Instruction
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 
-
 @BindingAdapter("listInstruction")
 fun bindHRecyclerView(recyclerView: RecyclerView,data:List<Instruction>?){
 
-        val adapter = recyclerView.adapter as InstructionAdapter
-        adapter.submitList(data)
+    val adapter = recyclerView.adapter as InstructionAdapter
+
 
 }
 @BindingAdapter("imageUrl")

@@ -100,16 +100,17 @@
         </com.google.android.material.card.MaterialCardView>
 
         <ScrollView
+
             android:layout_width="405dp"
             android:layout_height="348dp"
             android:layout_marginStart="3dp"
             android:layout_marginEnd="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card"
-            app:layout_constraintVertical_bias="0.0">
+            app:layout_constraintVertical_bias="0.191">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -117,12 +118,22 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/article_subheading"
                     android:layout_width="match_parent"
-                    android:layout_height="348dp"
+                    android:layout_height="wrap_content"
+
+                    android:text="Read Thourht The Instrution"
+                    android:textAppearance="@android:style/TextAppearance" />
+
+                <TextView
+                    android:id="@+id/article"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="@{viewmodel.selectedProperty.content}"
                     tools:text="Hello" />
+
             </LinearLayout>
         </ScrollView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

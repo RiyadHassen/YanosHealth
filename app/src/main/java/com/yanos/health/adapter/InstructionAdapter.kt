@@ -8,25 +8,25 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.firebase.ui.database.FirebaseRecyclerAdapter
+import com.firebase.ui.database.FirebaseRecyclerOptions
 
 
 import com.yanos.health.databinding.ListItemYanosInstrutionBinding
 import com.yanos.health.firebase.Instruction
 
-
-class InstructionAdapter(val onClickListener: OnClickListener): ListAdapter<Instruction, ViewHolder>(InstructionDiffCallback()){
+class InstructionAdapter(val onClickListener: OnClickListener, val option:FirebaseRecyclerOptions<Instruction>): FirebaseRecyclerAdapter<Instruction, ViewHolder>(option){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        Log.i("Information provided","Adapter created")
         return ViewHolder(ListItemYanosInstrutionBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(viewHolder: ViewHolder, position: Int, post: Instruction) {
+        // Bind to ViewHolder
         val instruction = getItem(position)
-        holder.itemView.setOnClickListener {
+        viewHolder.itemView.setOnClickListener{
             onClickListener.onClick(instruction)
         }
-        holder.bind(instruction)
+        viewHolder.bind(post)
     }
 
     class OnClickListener(val clickListener: (instructionProperty: Instruction) -> Unit) {
@@ -34,28 +34,12 @@ class InstructionAdapter(val onClickListener: OnClickListener): ListAdapter<Inst
     }
 
 }
-
-class InstructionDiffCallback: DiffUtil.ItemCallback<Instruction>(){
-    override fun areItemsTheSame(oldItem: Instruction, newItem: Instruction): Boolean {
-        return oldItem.weekno == newItem.weekno
-    }
-
-    override fun areContentsTheSame(oldItem: Instruction, newItem: Instruction): Boolean {
-        return  oldItem == newItem
-    }
-
-}
-class ViewHolder(private  val binding: ListItemYanosInstrutionBinding):
-    RecyclerView.ViewHolder(binding.root){
+class ViewHolder(private  var binding: ListItemYanosInstrutionBinding):
+    RecyclerView.ViewHolder(binding.root) {
     fun bind(instruction: Instruction) {
         binding.inst = instruction
-        Log.i("MESSAGE", instruction.toString())
-        // This is important, because it forces the data binding to execute immediately,
-        // which allows the RecyclerView to make the correct view size measurements
         binding.executePendingBindings()
     }
-
-
 }
 
 
